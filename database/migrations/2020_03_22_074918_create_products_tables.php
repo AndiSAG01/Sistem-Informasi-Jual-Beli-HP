@@ -20,6 +20,7 @@ class CreateProductsTables extends Migration
             $table->text('image');
             $table->integer('price');
             $table->integer('weigth');
+            $table->integer('stok')->default(0);
             $table->unsignedBigInteger('categories_id');
             $table->timestamps();
         });

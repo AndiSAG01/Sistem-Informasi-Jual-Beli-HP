@@ -22,6 +22,11 @@ class CreateOrderTable extends Migration
             $table->unsignedBigInteger('status_order_id');
             $table->string('metode_pembayaran');
             $table->integer('ongkir');
+            $table->integer('biaya_cod')->default(0);
+            $table->string('no_hp')->nullable();
+            $table->string('bukti_pembayaran')->nullable();
+            $table->text('pesan')->nullable();
+
             $table->timestamps();
         });
     }
