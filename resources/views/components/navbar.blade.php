@@ -61,6 +61,31 @@
              <span>Kategori Produk</span></a>
      </li>
 
+     <div class="sidebar-heading">
+        Pelayanan
+    </div>
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item {{ Request::path() === 'ruangan' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route ('admin.room')}}">
+            <i class="fas fa-fw fa-home"></i>
+            <span>Ruangan Penginapan</span></a>
+    </li>
+
+    <li class="nav-item {{ Request::path() === 'penginapan' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.penginapan') }}">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Data Penginapan Hewan</span></a>
+    </li>
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item {{ Request::path() === 'categories' ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('admin.categories') }}">
+            <i class="fas fa-regular fa-folder"></i>
+            <span>Grooming</span></a>
+    </li>
+
+
      <hr class="sidebar-divider">
 
      <!-- Heading -->

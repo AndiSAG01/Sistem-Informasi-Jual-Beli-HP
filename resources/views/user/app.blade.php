@@ -42,24 +42,25 @@ img {
 
 <body>
 <x-dateTarget></x-dateTarget>
-<div class="site-wrap">
+<div class="site-wrap" style="background: rgb(195, 194, 195)">
 <header class="site-navbar" role="banner">
     <div class="site-navbar-top">
-        <div class="container bg-primary p-3 rounded text-white">
+        <div class="container p-3 rounded text-white" style="background: rgb(255, 127, 236)">
             <div class="row align-items-center">
 
                 <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+                    <div class="font-weight-bold">
+                        <a href="{{ route('home') }}" class="js-logo-clone d-sm-none d-lg-inline text-white">{{ $toko->name_store }}</a>
+                    </div>
+                </div>
+
+                <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-left">
                     <form action="{{ route('user.produk.cari') }}" method="get" class="site-block-top-search">
                         @csrf
                         <input type="text" class="form-control border-0" name="cari" placeholder="Search">
                     </form>
                 </div>
 
-                <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
-                    <div class="font-weight-bold">
-                        <a href="{{ route('home') }}" class="js-logo-clone d-sm-none d-lg-inline text-white">{{ $toko->name_store }}</a>
-                    </div>
-                </div>
 
                 <div class="col-6 col-md-4 order-3 order-md-3 text-right">
                     <div class="top-right links">
@@ -150,7 +151,12 @@ img {
                 </li>
                 <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a
                         href="{{ route('user.produk') }}">Produk</a></li>
-                {{-- <li><a href="{{ route('contact.index') }}">Contact</a></li> --}}
+                <li class="{{ Request::path() === 'penginapan' ? '' : '' }}"><a
+                        href="{{ route('user.penginapan')}}">Penginapan Hewan</a></li>
+                <li class="{{ Request::path() === 'grooming' ? '' : '' }}"><a
+                        href="#">Grooming</a></li>
+                <li class="{{ Request::path() === 'Transaksi' ? '' : '' }}"><a
+                        href="{{route('user.transaksi')}}">Transaksi</a></li>
             </ul>
         </div>
     </nav>

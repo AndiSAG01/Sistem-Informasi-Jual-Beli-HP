@@ -60,15 +60,15 @@
         <h6 class="text-center text-primary"><strong>TENTANG KAMI</strong></h6>
         <h2 class="text-center text-dark"><strong>MENJAGA BAHAGIA SEPANJANG WAKTU</strong></h2>
         <div class="container pt-5">
-            <div class="row">
-                <div class="col-md"><img class="img-responsive" src="https://pethouse.joomlatema.net/images/dogs.jpg"
+            <div class="row justify-content-center">
+                <div class="mb-4"><img class="img-responsive" src="https://pethouse.joomlatema.net/images/dogs.jpg"
                         alt=""></div>
-                <div class="col-md text-right">
-                    <h4 class="text-dark">“<span class="text-primary">Kami Tahu</span> Bahwa <span
-                            class="text-primary">Bahagia</span> Itu <br>
-                        <span class="text-primary">Penting</span> Bagi Mereka”
+                <div class=" text-center mb-4">
+                    <h4 class="text-dark">“<span class="text-white">Kami Tahu</span> Bahwa <span
+                            class="text-white">Bahagia</span> Itu <br>
+                        <span class="text-white">Penting</span> Bagi Mereka”
                     </h4>
-                    <p>Anda dapat memberikan kebahagiaan yang lebih baik pada hewan peliharaan Anda dengan memperoleh
+                    <p class="text-dark">Anda dapat memberikan kebahagiaan yang lebih baik pada hewan peliharaan Anda dengan memperoleh
                         perlengkapan berkualitas dari toko kami.</p>
                 </div>
             </div>
@@ -94,9 +94,9 @@
                                             class="img-fluid" width="100%" style="height:300px">
                                     </figure>
                                     </a>
-                                    <div class="block-4-text p-4" style="height: 200px;">
-                                        <h3 class="text-dark">{{ Str::limit($produk->name, 20, '...') }}</h3>
-                                        <p class="mb-0">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
+                                    <div class="block-4-text p-4 bg-primary" style="height: 200px;">
+                                        <h3 class="text-white">{{ Str::limit($produk->name, 20, '...') }}</h3>
+                                        <p class="mb-0 text-white">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
                                         @if ($produk->stok == 0)
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
                                                 class="btn btn-primary mt-2 disabled" tabindex="-1" role="button"

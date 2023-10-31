@@ -56,7 +56,7 @@
                             </td>
                             <td>
                                 <div class="d-flex" style="gap: 5px">
-                                    <a href="{{ route('admin.product.edit', ['id' => $product->id]) }}"
+                                    <a href="{{ route('admin.product.edit', ['id' => $product->id])}}"
                                         class="btn btn-warning btn-sm"><i class="fa fa-gavel" aria-hidden="true"></i>
                                         Ubah</a>
                                     <a href="{{ route('admin.product.delete', ['id' => $product->id]) }}"

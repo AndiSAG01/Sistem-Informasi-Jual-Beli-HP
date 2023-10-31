@@ -15,8 +15,10 @@ use App\Http\Controllers\admin\CategoriesController;
 use App\Http\Controllers\admin\LaporanController;
 use App\Http\Controllers\admin\PelangganController;
 use App\Http\Controllers\admin\PengaturanController;
+use App\Http\Controllers\admin\PenginapanadmController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\RekeningController;
+use App\Http\Controllers\admin\RoomadmController;
 use App\Http\Controllers\admin\TransaksiController;
 use App\Http\Controllers\user\AlamatController;
 use App\Http\Controllers\user\CheckoutController;
@@ -27,6 +29,8 @@ use App\Http\Controllers\user\WelcomeController;
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PenginapanController;
+use App\Http\Controllers\SewaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +53,23 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
         Route::post('/updatealamat/{id}',[PengaturanController::class, 'updatealamat'])->name('admin.pengaturan.updatealamat');
     });
 
+    #kelola data room
+    Route::get('/admin/Room',[RoomadmController::class,'index'])->name('admin.room');
+    Route::get('/admin/tambah',[RoomadmController::class,'create'])->name('admin.room.create');
+    Route::post('/admin/room/store',[RoomadmController::class,'store'])->name('admin.room.store');
+    Route::post('/admin/room/update/{id}',[RoomadmController::class, 'update'])->name('admin.room.update');
+    Route::get('/admin/room/edit/{id}',[RoomadmController::class,'edit'])->name('admin.room.edit');
+    Route::get('/admin/room/delete/{id}',[RoomadmController::class,'delete'])->name('admin.room.delete');
+
+    #keloladatapenginapanadm
+    Route::get('/admin/penginapan',[PenginapanadmController::class,'index'])->name('admin.penginapan');
+    Route::get('/admin/transaksi/{id}', [PenginapanadmController::class, 'end'])->name('admin.transaksi.selesai');
+    Route::put('/admin/transaksi/{id}/reject', [PenginapanadmController::class, 'reject'])->name('admin.transaksi.reject');
+    Route::put('/admin/{id}/destroy',[PenginapanadmController::class, 'delete'])->name('admin.penginapan.delete');
+    Route::put('/admin/{id}/confirmation',[PenginapanadmController::class, 'confirmation'])->name('transaksi.confirmation');
+
+
+    #kategoriadm
     Route::get('/admin/categories',[CategoriesController::class, 'index'])->name('admin.categories');
     Route::get('/admin/categories/tambah',[CategoriesController::class, 'tambah'])->name('admin.categories.tambah');
     Route::post('/admin/categories/store',[CategoriesController::class, 'store'])->name('admin.categories.store');
@@ -56,6 +77,7 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
     Route::get('/admin/categories/edit/{id}',[CategoriesController::class, 'edit'])->name('admin.categories.edit');
     Route::get('/admin/categories/delete/{id}',[CategoriesController::class, 'delete'])->name('admin.categories.delete');
 
+    #produkadm
     Route::get('/admin/product',[ProductController::class, 'index'])->name('admin.product');
     Route::get('/admin/product/tambah',[ProductController::class, 'tambah'])->name('admin.product.tambah');
     Route::post('/admin/product/store',[ProductController::class, 'store'])->name('admin.product.store');
@@ -63,6 +85,7 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
     Route::get('/admin/product/delete/{id}',[ProductController::class, 'delete'])->name('admin.product.delete');
     Route::post('/admin/product/update/{id}',[ProductController::class, 'update'])->name('admin.product.update');
 
+    #traksaksiadm
     Route::get('/admin/transaksi',[TransaksiController::class, 'index'])->name('admin.transaksi');
     Route::get('/admin/transaksi/perludicek',[TransaksiController::class, 'perludicek'])->name('admin.transaksi.perludicek');
     Route::get('/admin/transaksi/perludikirim',[TransaksiController::class, 'perludikirim'])->name('admin.transaksi.perludikirim');
@@ -74,6 +97,7 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
     Route::get('/admin/transaksi/dibatalkan',[TransaksiController::class, 'dibatalkan'])->name('admin.transaksi.dibatalkan');
     Route::get('/admin/transaksi/invoice/{id}',[TransaksiController::class, 'invoice'])->name('admin.transaksi.invoice');
 
+    #laporan
     Route::get('/admin/pelanggan',[PelangganController::class, 'index'])->name('admin.pelanggan');
     Route::get('/admin/customer',[PelangganController::class, 'customer'])->name('admin.customer');
     Route::get('/admin/laporan', [LaporanController::class, 'index']);
@@ -85,6 +109,7 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
     Route::put('/administrator/{id}', [AdminController::class, 'update']);
     Route::delete('/administrator/{id}', [AdminController::class, 'destroy']);
 
+    #rekening
     Route::get('/admin/rekening',[RekeningController::class, 'index'])->name('admin.rekening');
     Route::get('/admin/rekening/edit/{id}',[RekeningController::class, 'edit'])->name('admin.rekening.edit');
     Route::post('/admin/rekening/store',[RekeningController::class, 'store'])->name('admin.rekening.store');
@@ -93,10 +118,14 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
 });
 
 Route::group(['middleware' => ['auth','checkRole:customer']],function(){
+
+    #keranjang
     Route::post('/keranjang/simpan',[KeranjangController::class, 'simpan'])->name('user.keranjang.simpan');
     Route::get('/keranjang',[KeranjangController::class, 'index'])->name('user.keranjang');
     Route::post('/keranjang/update',[KeranjangController::class, 'update'])->name('user.keranjang.update');
     Route::get('/keranjang/delete/{id}',[KeranjangController::class, 'delete'])->name('user.keranjang.delete');
+
+    #alamat
     Route::get('/alamat',[AlamatController::class, 'index'])->name('user.alamat');
     Route::get('/getcity/{id}',[AlamatController::class, 'getCity'])->name('user.alamat.getCity');
     Route::post('/alamat/simpan',[AlamatController::class, 'simpan'])->name('user.alamat.simpan');
@@ -105,6 +134,7 @@ Route::group(['middleware' => ['auth','checkRole:customer']],function(){
 
     Route::get('/checkout',[CheckoutController::class, 'index'])->name('user.checkout');
 
+    #order
     Route::post('/order/simpan',[OrderController::class, 'simpan'])->name('user.order.simpan');
     Route::get('/order/sukses',[OrderController::class, 'sukses'])->name('user.order.sukses');
     Route::get('/order',[OrderController::class, 'index'])->name('user.order');
@@ -113,6 +143,15 @@ Route::group(['middleware' => ['auth','checkRole:customer']],function(){
     Route::get('/order/pesanandibatalkan/{id}',[OrderController::class, 'pesanandibatalkan'])->name('user.order.pesanandibatalkan');
     Route::get('/order/pembayaran/{id}',[OrderController::class, 'pembayaran'])->name('user.order.pembayaran');
     Route::post('/order/kirimbukti/{id}',[OrderController::class, 'kirimbukti'])->name('user.order.kirimbukti');
+
+    #sewa dan transaksi
+    Route::get('/sewa/{id}',[SewaController::class, 'index'])->name('user.sewa');
+    Route::post('/sewa/store',[SewaController::class, 'store'])->name('user.sewa.store');
+    Route::get('/transaksi',[SewaController::class,'transaksi'])->name('user.transaksi');
+    Route::get('/user/transaksi/{id}',[SewaController::class, 'confirmasi'])->name('user.transaksi.konfirmasi');
+
+    #hotel
+    Route::get('/penginapan',[PenginapanController::class, 'index'])->name('user.penginapan');
 });
 
 Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
