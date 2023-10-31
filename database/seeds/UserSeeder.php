@@ -3,6 +3,7 @@
 use App\Alamat;
 use Illuminate\Database\Seeder;
 use App\User;
+
 class UserSeeder extends Seeder
 {
     /**
@@ -14,16 +15,25 @@ class UserSeeder extends Seeder
     {
         $data = [
             [
-                'name' => 'admin','email' => 'admin@example.com','password' => bcrypt('password'),'role' => 'admin'
+                'name' => 'admin',
+                'email' => 'admin@example.com',
+                'password' => bcrypt('password'),
+                'role' => 'admin'
             ],
+
             [
-                'name' => 'user','email' => 'user@example.com','password' => bcrypt('password'),'role' => 'customer'
+                'name' => 'user',
+                'email' => 'user@example.com',
+                'password' => bcrypt('password'),
+                'role' => 'customer'
 
             ]
         ];
         User::insert($data);
 
-        factory(App\User::class, 50)->create();
-
+        factory(
+            App\User::class,
+            50
+        )->create();
     }
 }

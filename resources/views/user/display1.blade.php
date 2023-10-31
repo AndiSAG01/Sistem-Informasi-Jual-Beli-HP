@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    {{-- <div class="site-section block-3 site-blocks-2" data-aos="fade-up">
+    <div class="site-section block-3 site-blocks-2" data-aos="fade-up">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-7 site-section-heading text-center pt-4">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
     <div class="site-section">
         <h6 class="text-center text-primary"><strong>TENTANG KAMI</strong></h6>
         <h2 class="text-center text-dark"><strong>MENJAGA BAHAGIA SEPANJANG WAKTU</strong></h2>
@@ -64,11 +64,12 @@
                 <div class="mb-4"><img class="img-responsive" src="https://pethouse.joomlatema.net/images/dogs.jpg"
                         alt=""></div>
                 <div class=" text-center mb-4">
-                    <h4 class="text-dark">“<span class="text-white">Kami Tahu</span> Bahwa <span
-                            class="text-white">Bahagia</span> Itu <br>
-                        <span class="text-white">Penting</span> Bagi Mereka”
+                    <h4 class="text-dark">“<span class="text-primary">Kami Tahu</span> Bahwa <span
+                            class="text-primary">Bahagia</span> Itu <br>
+                        <span class="text-primary">Penting</span> Bagi Mereka”
                     </h4>
-                    <p class="text-dark">Anda dapat memberikan kebahagiaan yang lebih baik pada hewan peliharaan Anda dengan memperoleh
+                    <p class="text-dark">Anda dapat memberikan kebahagiaan yang lebih baik pada hewan peliharaan Anda dengan
+                        memperoleh
                         perlengkapan berkualitas dari toko kami.</p>
                 </div>
             </div>
@@ -88,13 +89,12 @@
                     <div class="nonloop-block-3 owl-carousel">
                         @foreach ($produks as $produk)
                             <div class="item">
-                                <div class="block-4 text-center">
-                                    <figure class="block-4-image">
-                                        <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder"
-                                            class="img-fluid" width="100%" style="height:300px">
-                                    </figure>
+
+                                <div class="block-4 text-center border bg-secondary">
+                                    <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder" class="img-fluid"
+                                        width="100%" style="height:200px">
                                     </a>
-                                    <div class="block-4-text p-4 bg-primary" style="height: 200px;">
+                                    <div class="block-4-text p-4" style="height: 200px;">
                                         <h3 class="text-white">{{ Str::limit($produk->name, 20, '...') }}</h3>
                                         <p class="mb-0 text-white">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
                                         @if ($produk->stok == 0)
@@ -105,6 +105,7 @@
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
                                                 class="btn btn-dark mt-2">Detail</a>
                                         @endif
+
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +145,8 @@
                         <i class="fa fa-headphones text-dark fa-3x flex-shrink-0"></i>
                         <div class="ms-4">
                             <h5 class="font-weight-bold text-primary">Dukungan Telepon 24/7</h5>
-                            <p class="mb-0 text-dark">Anda dapat menghubungi kami kapan saja, baik siang maupun malam, untuk
+                            <p class="mb-0 text-dark">Anda dapat menghubungi kami kapan saja, baik siang maupun malam,
+                                untuk
                                 berkonsultasi tentang kebutuhan hewan peliharaan Anda. Tim dukungan kami siap membantu Anda
                                 dengan senang hati.</p>
                         </div>

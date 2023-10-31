@@ -37,7 +37,7 @@
                     <div class="row mb-5 justify-content-center">
                         @foreach ($produks as $produk)
                             <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                                <div class="block-4 text-center border bg-primary">
+                                <div class="block-4 text-center border bg-secondary">
                                     <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder" class="img-fluid"
                                         width="100%" style="height:200px">
                                     </a>

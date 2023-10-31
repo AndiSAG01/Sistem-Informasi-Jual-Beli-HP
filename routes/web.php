@@ -15,10 +15,8 @@ use App\Http\Controllers\admin\CategoriesController;
 use App\Http\Controllers\admin\LaporanController;
 use App\Http\Controllers\admin\PelangganController;
 use App\Http\Controllers\admin\PengaturanController;
-use App\Http\Controllers\admin\PenginapanadmController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\RekeningController;
-use App\Http\Controllers\admin\RoomadmController;
 use App\Http\Controllers\admin\TransaksiController;
 use App\Http\Controllers\user\AlamatController;
 use App\Http\Controllers\user\CheckoutController;
@@ -52,22 +50,6 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
         Route::post('/simpanalamat',[PengaturanController::class, 'simpanalamat'])->name('admin.pengaturan.simpanalamat');
         Route::post('/updatealamat/{id}',[PengaturanController::class, 'updatealamat'])->name('admin.pengaturan.updatealamat');
     });
-
-    #kelola data room
-    Route::get('/admin/Room',[RoomadmController::class,'index'])->name('admin.room');
-    Route::get('/admin/tambah',[RoomadmController::class,'create'])->name('admin.room.create');
-    Route::post('/admin/room/store',[RoomadmController::class,'store'])->name('admin.room.store');
-    Route::post('/admin/room/update/{id}',[RoomadmController::class, 'update'])->name('admin.room.update');
-    Route::get('/admin/room/edit/{id}',[RoomadmController::class,'edit'])->name('admin.room.edit');
-    Route::get('/admin/room/delete/{id}',[RoomadmController::class,'delete'])->name('admin.room.delete');
-
-    #keloladatapenginapanadm
-    Route::get('/admin/penginapan',[PenginapanadmController::class,'index'])->name('admin.penginapan');
-    Route::get('/admin/transaksi/{id}', [PenginapanadmController::class, 'end'])->name('admin.transaksi.selesai');
-    Route::put('/admin/transaksi/{id}/reject', [PenginapanadmController::class, 'reject'])->name('admin.transaksi.reject');
-    Route::put('/admin/{id}/destroy',[PenginapanadmController::class, 'delete'])->name('admin.penginapan.delete');
-    Route::put('/admin/{id}/confirmation',[PenginapanadmController::class, 'confirmation'])->name('transaksi.confirmation');
-
 
     #kategoriadm
     Route::get('/admin/categories',[CategoriesController::class, 'index'])->name('admin.categories');
@@ -159,5 +141,3 @@ Route::post('contact', [ContactController::class, 'store'])->name('contact.store
 ;
 Route::get('admin/contact', [ContactController::class, 'tables'])->name('contact');
 Route::get('admin/contact/{id}', [ContactController::class, 'show'])->name('contact.show');
-
-Route::view('/index', 'index');
