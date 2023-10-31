@@ -154,6 +154,10 @@
                             </li>
                             <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a
                                     href="{{ route('user.produk') }}">Produk</a></li>
+                            <li class="{{ Request::path() === 'grooming' ? '' : '' }}"><a
+                                    href="{{ route('grooming') }}">grooming</a></li>
+                            <li class="{{ Request::path() === 'booking' ? '' : '' }}"><a
+                                    href="{{ route('booking') }}">booking</a></li>
                         </ul>
                     </div>
                 </nav>
