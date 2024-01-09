@@ -8,6 +8,7 @@
     <title>{{ $toko->name_store }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
     <link rel="stylesheet" href="{{ asset('shopper') }}/fonts/icomoon/style.css">
@@ -24,6 +25,10 @@
     <link rel="stylesheet" href="{{ asset('shopper') }}/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
 
+    <script src="https://kit.fontawesome.com/be87c3e44a.js" crossorigin="anonymous"></script>
+
+
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
@@ -37,6 +42,46 @@
             object-fit: cover;
 
         }
+
+        
+
+        #border {
+            margin:0 auto;
+            height: 300px;
+            width: 900px;
+          border-radius: 20px;
+        }
+        #bord {
+            margin:0 auto;
+            height: 400px;
+            width: 900px;
+          border-radius: 20px;
+        }
+
+        #gr {
+            margin:0 auto;
+            height: 90px;
+            width: 450px;
+            font-family: 'Blackletter';
+        }
+        #tr {
+            margin:0 auto;
+            height: 200px;
+            width: 600px;
+            border-radius: 10px
+        }
+
+
+        #btn {
+            width: 50px;
+            height: 30px;
+            border-radius: 20px;
+            background-color: rgb(20, 48, 228)90, 230);
+
+        }
+
+
+
     </style>
 </head>
 
@@ -157,7 +202,7 @@
                             <li class="{{ Request::path() === 'grooming' ? '' : '' }}"><a
                                     href="{{ route('grooming') }}">grooming</a></li>
                             <li class="{{ Request::path() === 'booking' ? '' : '' }}"><a
-                                    href="{{ route('booking') }}">booking</a></li>
+                                    href="{{ route('booking') }}">Pet Hotel</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -208,6 +253,7 @@
     <script src="{{ asset('shopper') }}/js/owl.carousel.min.js"></script>
     <script src="{{ asset('shopper') }}/js/jquery.magnific-popup.min.js"></script>
     <script src="{{ asset('shopper') }}/js/aos.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <script src="{{ asset('shopper') }}/js/main.js"></script>
     @yield('js')

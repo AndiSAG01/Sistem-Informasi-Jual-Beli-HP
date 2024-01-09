@@ -15,6 +15,7 @@ use App\Http\Controllers\admin\CategoriesController;
 use App\Http\Controllers\admin\LaporanController;
 use App\Http\Controllers\admin\PelangganController;
 use App\Http\Controllers\admin\PengaturanController;
+use App\Http\Controllers\admin\PenginapanadmController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\RekeningController;
 use App\Http\Controllers\admin\TransaksiController;
@@ -29,6 +30,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PenginapanController;
 use App\Http\Controllers\SewaController;
+use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -40,7 +42,7 @@ Route::get('/produk/cari', [ProdukController::class, 'cari'])->name('user.produk
 Route::get('/kategori/{id}', [KategoriController::class, 'produkByKategori'])->name('user.kategori');
 Route::get('/produk/{id}', [ProdukController::class, 'detail'])->name('user.produk.detail');
 
-Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
+Route::group(['middleware' => ['auth', ]], function () {
     Route::get('/admin', 'DashboardController@index')->name('admin.dashboard');
     Route::put('/identity/{id}', [PengaturanController::class, 'identity']);
     Route::prefix('/pengaturan')->group(function () {
@@ -83,6 +85,7 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::get('/admin/pelanggan', [PelangganController::class, 'index'])->name('admin.pelanggan');
     Route::get('/admin/customer', [PelangganController::class, 'customer'])->name('admin.customer');
     Route::get('/admin/laporan', [LaporanController::class, 'index']);
+    Route::get('/admin/laporanProduk',[LaporanController::class, 'produk'])->name('admin.laporanproduk');
 
     Route::get('/administrator', [AdminController::class, 'index']);
     Route::get('/administrator/create', [AdminController::class, 'create']);
@@ -97,6 +100,13 @@ Route::group(['middleware' => ['auth', 'checkRole:admin']], function () {
     Route::post('/admin/rekening/store', [RekeningController::class, 'store'])->name('admin.rekening.store');
     Route::get('/admin/rekening/delete/{id}', [RekeningController::class, 'delete'])->name('admin.rekening.delete');
     Route::post('/admin/rekening/update/{id}', [RekeningController::class, 'update'])->name('admin.rekening.update');
+
+    #supplier
+    Route::get('/admin/supplier', [SupplierController::class, 'index'])->name('admin.supplier');
+    Route::get('/admin/supplier/edit/{id}', [SupplierController::class, 'edit'])->name('admin.supplier.edit');
+    Route::post('/admin/supplier/store', [SupplierController::class, 'store'])->name('admin.supplier.store');
+    Route::get('/admin/supplier/delete/{id}', [SupplierController::class, 'delete'])->name('admin.supplier.delete');
+    Route::post('/admin/supplier/update/{id}', [SupplierController::class, 'update'])->name('admin.supplier.update');
 });
 
 Route::group(['middleware' => ['auth', 'checkRole:customer']], function () {
@@ -150,5 +160,6 @@ Route::prefix('admin/contact')->group(function () {
 // ==============================================================
 // Lanjut di bawah
 
-Route::view('/grooming', 'grooming')->name('grooming');
-Route::view('/booking', 'booking')->name('booking');
+Route::get('/grooming', [WelcomeController::class,'grooming'])->name('grooming');
+Route::get('/booking',[WelcomeController::class, 'kirimPesan'])->name('booking');
+Route::get('/grooming',[WelcomeController::class, 'seed'])->name('grooming');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Order;
+use App\Product;
 use Illuminate\Http\Request;
 
 class LaporanController extends Controller
@@ -15,5 +16,11 @@ class LaporanController extends Controller
         ->select('order.*', 'status_order.name', 'users.name as nama_pemesan')
         ->latest()->get(),
    ] );
+    }
+    public function produk()
+    {
+
+        $produk = Product::latest()->get();
+        return view('admin.laporanproduk', compact('produk'));
     }
 }
