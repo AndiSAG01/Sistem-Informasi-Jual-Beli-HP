@@ -12,26 +12,26 @@
                     <div class="carousel-item active">
                         <img class="d-block m-auto" src="/layouts/drawKit/vector (7).svg" style="height: 400px;"
                             alt="First slide">
-                        <div class="carousel-caption d-md-block">
+                        <div class="carousel-caption d-md-block" style=" background-color: rgba(0, 0, 0, 0.405)">
                             <h5>Pengiriman cepat dan andal</h5>
-                            <p>Jangan sampai menunggu lama untuk mendapatkan pakaian berkualitas terbaik yang Anda inginkan!
+                            <p>Jangan sampai menunggu lama untuk mendapatkan alat tulis kantor yang anda butuhkan
                             </p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img class="d-block m-auto" src="/layouts/drawKit/vector (4).svg" style="height: 400px;"
                             alt="Second slide">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Kami hanya menggunakan bahan berkualitas terbaik untuk setiap pakaian yang kami produksi
+                        <div class="carousel-caption d-md-block" style=" background-color: rgba(0, 0, 0, 0.405)">
+                            <h5>Kami menyediakan alat tulis kantor secara lengkap
                             </h5>
-                            <p>Sehingga Anda tidak perlu khawatir tentang keawetan dan kualitasnya.</p>
+                            <p>Sehingga Anda tidak perlu khawatir tentang kelengkapan barang kami</p>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img class="d-block m-auto" src="/layouts/drawKit/vector (8).svg" style="height: 400px;"
                             alt="Third slide">
-                        <div class="carousel-caption d-md-block">
-                            <h5>Dapatkan pakaian berkualitas tinggi dengan harga terjangkau di sini! </h5>
+                        <div class="carousel-caption d-md-block" style=" background-color: rgba(0, 0, 0, 0.405)">
+                            <h5>Dapatkan alat tulis kantor dengan harga terjangkau di sini! </h5>
                             <p>Kami menawarkan produk-produk terbaik tanpa merusak dompet Anda.</p>
                         </div>
                     </div>
@@ -56,12 +56,11 @@
             </div>
             <div class="col-md">
                 <div class="media-body align-self-center text-dark">
-                    <h3 class="mt-5">Tampil Keren dengan Pakaian Anak Berkualitas Tinggi</h3>
-                    <p>Jangan pernah mengorbankan kualitas untuk gaya! Di toko kami, Anda bisa mendapatkan pakaian anak
-                        berkualitas
-                        tinggi dengan harga terjangkau. Dapatkan busana anak-anak yang trendi dan tahan lama untuk tampil
-                        keren
-                        sepanjang hari.</p>
+                    <h3 class="mt-5">kami ingin memastikan bahwa kebutuhan kantor Anda terpenuhi dengan hemat dan efisien.
+                    </h3>
+                    <p>Kunjungi toko kami sekarang, dan sambut efisiensi dan kenyamanan dalam setiap kegiatan kantor Anda.
+                        Promo ATK ini hanya berlaku untuk waktu terbatas, jadi segera dapatkan sebelum kehabisan!
+                    </p>
                 </div>
             </div>
         </div>

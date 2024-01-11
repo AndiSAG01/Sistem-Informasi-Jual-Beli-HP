@@ -31,6 +31,12 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * root path for index and non-login users
      */
+
+     public const PEMILIK = '/admin';
+
+     /**
+      * root path for index and non-login users
+      */
     public const ROOT = '/';
 
     /**
