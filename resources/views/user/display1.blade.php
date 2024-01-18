@@ -5,7 +5,6 @@
         <h1 class="font-weight-bold">BUAT HEWAN PELIHARAANMU BAHAGIA
         </h1>
     </div>
-
     <div class="container">
         <div class="site-blocks-cover rounded"
             style="background-image: url('https://images.unsplash.com/photo-1573148164257-8a2b173be464?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBldCUyMGNhdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60'); max-height:200px;"

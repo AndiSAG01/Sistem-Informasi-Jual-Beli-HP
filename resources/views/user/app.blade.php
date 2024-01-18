@@ -90,7 +90,7 @@
     <div class="site-wrap">
         <header class="site-navbar" role="banner">
             <div class="site-navbar-top">
-                <div class="container p-3 rounded text-white bg-secondary">
+                <div class="container p-3 rounded text-white bg-success">
                     <div class="row align-items-center">
 
                         <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
@@ -207,7 +207,7 @@
         @yield('content')
 
         <footer class="site-footer border-top">
-            <div class="container bg-secondary p-5 rounded">
+            <div class="container bg-success p-5 rounded">
                 <div class="row">
                     <div class="col-md mb-5 mb-lg-0">
                         <div class="row">

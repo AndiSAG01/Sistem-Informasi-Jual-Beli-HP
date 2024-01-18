@@ -20,7 +20,7 @@
 
             <div class="row mb-5">
                 <div class="col-md order-2  mb-5 mb-md-0">
-                    <div class="border p-4 rounded mb-4">
+                    <div class="border p-1 rounded mb-4">
                         <h2 class="mb-3 h6 text-uppercase  text-primary d-block font-weight-bold">Kategori Produk</h3>
                             <ul class="list-unstyled mb-0">
                                 @foreach ($categories as $categori)
@@ -37,7 +37,7 @@
                     <div class="row mb-5 justify-content-center">
                         @foreach ($produks as $produk)
                             <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                                <div class="block-4 text-center border bg-secondary">
+                                <div class="block-4 text-center border bg-info">
                                     <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder" class="img-fluid"
                                         width="100%" style="height:200px">
                                     </a>

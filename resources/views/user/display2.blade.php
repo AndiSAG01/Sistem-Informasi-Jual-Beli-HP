@@ -1,8 +1,9 @@
 @extends('user.app')
 @section('content')
-    <div class="card border-0">
+<div class="container" style="background-image: url('cv_ammar.jpeg'); width:1000px; height:500px;">
+    {{-- <div class="card border-0">
         <div class="card-body">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background-color: #7971ea">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="background-image: url('cv_ammar.jpeg')">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -46,16 +47,16 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    <div class="media mx-5 justify-content-center">
+    {{-- <div class="media mx-5 justify-content-center">
         <div class="row">
             <div class="col-md text-center">
                 <img class="align-self-center mr-3 w-50" src="/layouts/drawKit/vector (3).svg"
                     alt="Generic placeholder image">
             </div>
             <div class="col-md">
-                <div class="media-body align-self-center text-dark">
+                <div class="media-body align-self-center text-white" style=" background-color: rgba(0, 0, 0, 0.405)">
                     <h3 class="mt-5">kami ingin memastikan bahwa kebutuhan kantor Anda terpenuhi dengan hemat dan efisien.
                     </h3>
                     <p>Kunjungi toko kami sekarang, dan sambut efisiensi dan kenyamanan dalam setiap kegiatan kantor Anda.
@@ -64,11 +65,15 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+    
+    <div class="card-body text-center text-white" style=" background-color: rgba(0, 0, 0, 0.405)">
+        <h2 style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif"><b>Selamat Datang Di Toko Kami Silahkan Pilih Produk Yang Anda Inginkan</b></h2>
     </div>
-    <div class="site-section block-3 site-blocks-2" data-aos="fade-up">
+    {{-- <div class="site-section block-3 site-blocks-2" data-aos="fade-up">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-7 site-section-heading text-center pt-4">
+                <div class="col-md-7 site-section-heading text-center text-white pt-4" style=" background-color: rgba(0, 0, 0, 0.405)">
                     <h2>Produk Terlaris</h2>
                 </div>
             </div>
@@ -102,5 +107,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
+</div>
 @endsection

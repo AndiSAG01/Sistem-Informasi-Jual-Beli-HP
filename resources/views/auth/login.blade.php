@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-secondary">
+<body class="bg-gradient-success">
 
     <div class="container">
 
@@ -31,16 +31,16 @@
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5" style="background: rgb(255, 127, 236)">
+                <div class="card o-hidden border-0 shadow-lg my-5" style="background: rgb(133, 255, 127)">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block" style=" background-image: url('{{ asset('/adminassets/assets/images/kucing.jpg') }}');"></div>
+                            <div class="col-lg-6 d-none d-lg-block" style=" background-image: url('{{ asset('/adminassets/assets/images/atk.jpeg') }}'); "></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4 font-weight-bold">Selamat datang kembali!</h1>
-                                        <div class="alert bg-warning  text-white alert-primary" role="alert">
+                                        <div class="alert bg-info  text-white alert-primary" role="alert">
                                             <small>Silakan masukkan email dan password Anda untuk login. Jika Anda belum
                                                 memiliki akun, silakan klik tombol daftar di bawah ini.
                                             </small>
@@ -79,7 +79,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-warning btn-user btn-block">
+                                        <button type="submit" class="btn btn-info btn-user btn-block">
                                             Masuk
                                         </button>
                                     </form>

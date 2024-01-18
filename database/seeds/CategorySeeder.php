@@ -15,13 +15,34 @@ class CategorySeeder extends Seeder
         // factory(App\Categories::class, 10)->create();
         $categories = [
             [
-                'name' => 'Makanan',
+                'name' => 'Pensil dan Pulpen',
             ],
             [
-                'name' => 'Perawatan',
+                'name' => 'Kertas',
             ],
             [
-                'name' => 'Aksesoris',
+                'name' => 'Peralatan Tulis',
+            ],
+            [
+                'name' => 'Perlengkapan Meja'
+            ],
+            [
+                'name' => 'Klip dan Penjepit'
+            ],
+            [
+                'name' => 'Tinta dan Kerektor'
+            ],
+            [
+                'name' => 'Peralatan Kreatif'
+            ],
+            [
+                'name' => 'Perlengkapan Kantor'
+            ],
+            [
+                'name' => 'Aksesoris'
+            ],
+            [
+                'name' => 'Perlengkapan Teknologi'
             ],
             // Tambahkan kategori lainnya
         ];

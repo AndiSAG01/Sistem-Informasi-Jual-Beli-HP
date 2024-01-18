@@ -62,11 +62,11 @@ Route::group(['middleware' => ['auth','checkRole:admin,pemilik']],function(){
     Route::get('/admin/room/delete/{id}',[RoomadmController::class,'delete'])->name('admin.room.delete');
 
     #keloladatapenginapanadm
-    Route::get('/admin/penginapan',[PenginapanadmController::class,'index'])->name('admin.penginapan');
-    Route::get('/admin/transaksi/{id}', [PenginapanadmController::class, 'end'])->name('admin.transaksi.selesai');
-    Route::put('/admin/transaksi/{id}/reject', [PenginapanadmController::class, 'reject'])->name('admin.transaksi.reject');
-    Route::put('/admin/{id}/destroy',[PenginapanadmController::class, 'delete'])->name('admin.penginapan.delete');
-    Route::put('/admin/{id}/confirmation',[PenginapanadmController::class, 'confirmation'])->name('transaksi.confirmation');
+    // Route::get('/admin/penginapan',[PenginapanadmController::class,'index'])->name('admin.penginapan');
+    // Route::get('/admin/transaksi/{id}', [PenginapanadmController::class, 'end'])->name('admin.transaksi.selesai');
+    // Route::put('/admin/transaksi/{id}/reject', [PenginapanadmController::class, 'reject'])->name('admin.transaksi.reject');
+    // Route::put('/admin/{id}/destroy',[PenginapanadmController::class, 'delete'])->name('admin.penginapan.delete');
+    // Route::put('/admin/{id}/confirmation',[PenginapanadmController::class, 'confirmation'])->name('transaksi.confirmation');
 
 
     #kategoriadm
