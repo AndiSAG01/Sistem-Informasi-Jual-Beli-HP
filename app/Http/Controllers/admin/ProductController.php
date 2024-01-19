@@ -34,6 +34,7 @@ class ProductController extends Controller
     {
         $data = Product::create([
             'name'          => $request->name,
+            'code'          => $request->code,
             'description'   => $request->description,
             'price'         => $request->price,
             'stok'          => $request->stok,

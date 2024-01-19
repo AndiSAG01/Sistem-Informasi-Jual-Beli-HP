@@ -26,6 +26,7 @@
                 <thead>
                     <tr>
                         <th>No.</th>
+                        <th>Kode Pelanggan</th>
                         <th>Nama Pelanggan</th>
                         <th>Email</th>
                     </tr>
@@ -34,6 +35,7 @@
                     @foreach ($customer as $no => $pel)
                         <tr>
                             <td>{{ ++$no }}</td>
+                            <td>{{ $pel->code }}</td>
                             <td>{{ $pel->name }}</td>
                             <td>{{ $pel->email }}</td>
                         </tr>

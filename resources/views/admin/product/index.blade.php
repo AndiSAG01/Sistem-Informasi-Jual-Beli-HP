@@ -31,6 +31,7 @@
                 <thead>
                     <tr>
                         <th width="5%">No</th>
+                        <th>Kode Produk</th>
                         <th>Nama Produk</th>
                         <th>Harga</th>
                         <th>Berat</th>
@@ -44,6 +45,7 @@
                     @foreach ($products as $no => $product)
                         <tr>
                             <td>{{ ++$no }}</td>
+                            <td>{{ $product->code }}</td>
                             <td>{{ $product->name }}</td>
                             <td>Rp. {{ number_format($product->price, 2, ',', '.') }}</td>
                             <td>{{ $product->weigth }}gr</td>

@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
         $data = [
             [
                 'name' => 'admin',
+                'code' => 'ADM.001',
                 'email' => 'admin@example.com',
                 'password' => bcrypt('password'),
                 'role' => 'admin'
@@ -23,6 +24,7 @@ class UserSeeder extends Seeder
 
             [
                 'name' => 'user',
+                'code' => 'USR.001',
                 'email' => 'user@example.com',
                 'password' => bcrypt('password'),
                 'role' => 'customer'
@@ -31,6 +33,7 @@ class UserSeeder extends Seeder
 
             [
                 'name' => 'pemilik',
+                'code' => 'PML.001',
                 'email' => 'pemilik@example.com',
                 'password' => bcrypt('password'),
                 'role' => 'pemilik'
@@ -41,7 +44,7 @@ class UserSeeder extends Seeder
 
         factory(
             App\User::class,
-            50
+            10
         )->create();
     }
 }

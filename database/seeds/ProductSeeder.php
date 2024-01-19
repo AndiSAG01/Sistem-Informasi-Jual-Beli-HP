@@ -104,6 +104,7 @@ class ProductSeeder extends Seeder
 
             // Buat record produk di database
             Product::create([
+                
                 'name' => $product['name'],
                 'description' => $product['description'],
                 'price' => $product['price'],

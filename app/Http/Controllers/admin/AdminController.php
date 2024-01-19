@@ -26,6 +26,7 @@ class AdminController extends Controller
         User::insert([
             'name' => $request->name,
             'email' => $request->email,
+            'code' => $request->code,
             'password' => bcrypt('administrator'),
             'role' => 'admin',
         ]);
