@@ -25,7 +25,20 @@
 <body class="bg-gradient-success">
 
     <div class="container">
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <strong>Alert Heading</strong>
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </div>
 
+        <script>
+            var alertList = document.querySelectorAll(".alert");
+            alertList.forEach(function(alert) {
+                new bootstrap.Alert(alert);
+            });
+        </script>
         <div class="card o-hidden border-0 shadow-lg my-5" style="background: rgb(180, 255, 127)">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
