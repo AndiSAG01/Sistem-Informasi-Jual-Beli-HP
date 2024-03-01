@@ -253,6 +253,24 @@
 
     <script src="{{ asset('shopper') }}/js/main.js"></script>
     @yield('js')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var minusBtn = document.querySelector('.js-btn-minus');
+            var plusBtn = document.querySelector('.js-btn-plus');
+            var qtyInput = document.querySelector('input[name="qty"]');
+    
+            minusBtn.addEventListener('click', function () {
+                if (parseInt(qtyInput.value) > 1) {
+                    qtyInput.value = parseInt(qtyInput.value) - 1;
+                }
+            });
+    
+            plusBtn.addEventListener('click', function () {
+                qtyInput.value = parseInt(qtyInput.value) + 1;
+            });
+        });
+    </script>
+    
 </body>
 
 </html>

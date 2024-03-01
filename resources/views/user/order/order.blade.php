@@ -38,7 +38,7 @@
                                 @foreach ($order as $o)
                                     <tr>
                                         <td>{{ $o->invoice }}</td>
-                                        <td>{{ $o->subtotal + $o->biaya_cod }}</td>
+                                        <td>Rp. {{ number_format($o->subtotal + $o->biaya_cod, 2, ',', '.') }}</td>
                                         <td>{{ $o->name }}</td>
                                         <td>
                                             <div class="d-flex" style="gap: 5px">
@@ -81,7 +81,7 @@
                                 @foreach ($dicek as $o)
                                     <tr>
                                         <td>{{ $o->invoice }}</td>
-                                        <td>{{ $o->subtotal + $o->biaya_cod }}</td>
+                                        <td>Rp. {{ number_format($o->subtotal + $o->biaya_cod, 2, ',', '.') }}</td>
                                         <td>
                                             @if ($o->name == 'Perlu Di Cek')
                                                 Sedang Di Cek
@@ -123,7 +123,7 @@
                                         @foreach ($histori as $o)
                                             <tr>
                                                 <td>{{ $o->invoice }}</td>
-                                                <td>{{ $o->subtotal + $o->biaya_cod }}</td>
+                                                <td>Rp. {{ number_format($o->subtotal + $o->biaya_cod, 2, ',', '.') }}</td>
                                                 <td>{{ $o->name }}</td>
                                                 <td>
                                                     <a href="{{ route('user.order.detail', ['id' => $o->id]) }}"

@@ -41,7 +41,10 @@ class KeranjangController extends Controller
 
         if ($request->qty > $product->stok) {
             return redirect()->back()->withErrors(['quantity' => 'Jumlah pemesanan melebihi stok yang tersedia']);
+
+            
         }
+        $product->stock -= $request['qty'];
         Keranjang::create([
             'user_id' => $request->user_id,
             'products_id' => $request->products_id,

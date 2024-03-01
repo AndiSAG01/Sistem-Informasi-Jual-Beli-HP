@@ -48,9 +48,17 @@
                                 @endauth
                             @endif
                             <input type="hidden" name="products_id" value="{{ $produk->id }}">
-                            <small>Sisa Stok {{ $produk->stok }}</small>
-                            <input type="hidden" value="{{ $produk->stok }}" id="sisastok">
-                            <div class="input-group mb-3" style="max-width: 120px;">
+                            
+                            <small class="mb-4">Sisa Stok 
+                                @if ($produk->stok <= 0)
+                                    <button class="btn btn-danger">Stok Telah Habis</button>
+                                @elseif ($produk->stok >= 0)
+                                    {{ $produk->stok }}
+                                @endif
+                            </small>
+                            <input type="hidden" value="{{ $produk->stock }}" id="sisastok">
+                            
+                            <div class="input-group mb-4" style="max-width: 120px;">
                                 <div class="input-group-prepend">
                                     <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
                                 </div>
@@ -61,10 +69,10 @@
                                     <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
                                 </div>
                             </div>
-
+                    
+                            <p><button type="submit" class="buy-now btn btn-sm btn-dark">Masukkan ke keranjang</button></p>
+                        </form>
                     </div>
-                    <p><button type="submit" class="buy-now btn btn-sm btn-dark">Masukkan ke keranjang</button></p>
-                    </form>
                 </div>
             </div>
         </div>
