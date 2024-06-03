@@ -1,14 +1,14 @@
 @extends('user.app')
 @section('content')
-    <div class="bg-light py-3">
+    <div class="py-3" style="background-color: rgb(117, 117, 117) ">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mb-0">
-                    <a href="#">Home</a>
+                    <a href="#" class="text-black">Home</a>
                     <span class="mx-2 mb-0">/</span>
-                    <a href="#">Order</a>
+                    <a href="#" class="text-black">Order</a>
                     <span class="mx-2 mb-0">/</span>
-                    <strong class="text-black">History</strong>
+                    <strong class="text-white">History</strong>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row mb-3">
                 <div class="col-md-12">
-                    <h4 class="text-center font-weight-bold text-primary">Belum Dibayar</h4>
+                    <h4 class="text-center font-weight-bold text-black">Belum Dibayar</h4>
                     <hr>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                     <div class="table-responsive">
                         <table class="table table-bordered text-center">
                             <thead>
-                                <tr>
+                                <tr class="text-black">
                                     <th class="product-thumbnail">Invoice</th>
                                     <th class="product-name">Total</th>
                                     <th class="product-price">Status</th>
@@ -36,7 +36,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($order as $o)
-                                    <tr>
+                                    <tr class="text-white">
                                         <td>{{ $o->invoice }}</td>
                                         <td>Rp. {{ number_format($o->subtotal + $o->biaya_cod, 2, ',', '.') }}</td>
                                         <td>{{ $o->name }}</td>
@@ -62,7 +62,7 @@
             <div class="container">
                 <div class="row mb-3">
                     <div class="col-md-12">
-                        <h4 class="text-center font-weight-bold text-primary">Sedang Dalam Proses</h4>
+                        <h4 class="text-center font-weight-bold text-black">Sedang Dalam Proses</h4>
                         <hr>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                     <div class="col-md-12">
                         <table class="table table-bordered text-center">
                             <thead>
-                                <tr>
+                                <tr class="text-black">
                                     <th class="product-thumbnail">Invoice</th>
                                     <th class="product-name">Total</th>
                                     <th class="product-price">Status</th>
@@ -79,7 +79,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($dicek as $o)
-                                    <tr>
+                                    <tr class="text-white">
                                         <td>{{ $o->invoice }}</td>
                                         <td>Rp. {{ number_format($o->subtotal + $o->biaya_cod, 2, ',', '.') }}</td>
                                         <td>
@@ -103,7 +103,7 @@
                 <div class="container">
                     <div class="row mb-3">
                         <div class="col-md-12">
-                            <h4 class="text-center font-weight-bold text-primary">Riwayat Pesanan Anda</h4>
+                            <h4 class="text-center font-weight-bold text-black">Riwayat Pesanan Anda</h4>
                             <hr>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered text-center">
                                     <thead>
-                                        <tr>
+                                        <tr class="text-black">
                                             <th class="product-thumbnail">Invoice</th>
                                             <th class="product-name">Total</th>
                                             <th class="product-price">Status</th>
@@ -121,7 +121,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($histori as $o)
-                                            <tr>
+                                            <tr class="text-white">
                                                 <td>{{ $o->invoice }}</td>
                                                 <td>Rp. {{ number_format($o->subtotal + $o->biaya_cod, 2, ',', '.') }}</td>
                                                 <td>{{ $o->name }}</td>

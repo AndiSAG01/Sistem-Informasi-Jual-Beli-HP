@@ -24,6 +24,9 @@
 
     <link rel="stylesheet" href="{{ asset('shopper') }}/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
     <script src="https://kit.fontawesome.com/be87c3e44a.js" crossorigin="anonymous"></script>
 
@@ -43,29 +46,31 @@
 
         }
 
-        
+
 
         #border {
-            margin:0 auto;
+            margin: 0 auto;
             height: 300px;
             width: 900px;
-          border-radius: 20px;
+            border-radius: 20px;
         }
+
         #bord {
-            margin:0 auto;
+            margin: 0 auto;
             height: 400px;
             width: 900px;
-          border-radius: 20px;
+            border-radius: 20px;
         }
 
         #gr {
-            margin:0 auto;
+            margin: 0 auto;
             height: 90px;
             width: 450px;
             font-family: 'Blackletter';
         }
+
         #tr {
-            margin:0 auto;
+            margin: 0 auto;
             height: 200px;
             width: 600px;
             border-radius: 10px
@@ -79,24 +84,22 @@
             background-color: rgb(20, 48, 228)90, 230);
 
         }
-
-
-
     </style>
 </head>
 
-<body>
+<body style="background-color:rgb(117, 117, 117)">
     <x-dateTarget></x-dateTarget>
     <div class="site-wrap">
-        <header class="site-navbar" role="banner">
+        <header class="site-navbar" style="background-color: rgb(117, 117, 117) " role="banner">
             <div class="site-navbar-top">
-                <div class="container p-3 rounded text-white bg-success">
+                <div class="container p-3 rounded text-dark bg-white">
                     <div class="row align-items-center">
 
                         <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
                             <div class="font-weight-bold">
+                                <img src="\adminassets\assets\images\maahir.jpg" alt="haloo" width="50px">
                                 <a href="{{ route('home') }}"
-                                    class="js-logo-clone d-sm-none d-lg-inline text-white">{{ $toko->name_store }}</a>
+                                    class="js-logo-clone d-sm-none d-lg-inline text-dark">{{ $toko->name_store }}</a>
                             </div>
                         </div>
 
@@ -104,7 +107,8 @@
                             <form action="{{ route('user.produk.cari') }}" method="get"
                                 class="site-block-top-search">
                                 @csrf
-                                <input type="text" class="form-control border-0" name="cari" placeholder="Search">
+                                <input type="text" style="background-color: rgba(117, 117, 117, 0.44)"
+                                    class="form-control border-0" name="cari" placeholder="Search">
                             </form>
                         </div>
 
@@ -141,28 +145,20 @@
                                                 <li>
                                                     <?php
                                                     $user_id = \Auth::user()->id;
-                                                    $total_keranjang = \DB::table('keranjang')
-                                                        ->select(DB::raw('count(id) as jumlah'))
-                                                        ->where('user_id', $user_id)
-                                                        ->first();
+                                                    $total_keranjang = \DB::table('keranjang')->select(DB::raw('count(id) as jumlah'))->where('user_id', $user_id)->first();
                                                     ?>
                                                     <a href="{{ route('user.keranjang') }}" class="site-cart">
-                                                        <span class="icon icon-add_shopping_cart text-white"></span>
+                                                        <span class="icon icon-add_shopping_cart text-black"></span>
                                                         <span class="count">{{ $total_keranjang->jumlah }}</span>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <?php
                                                     $user_id = \Auth::user()->id;
-                                                    $total_order = \DB::table('order')
-                                                        ->select(DB::raw('count(id) as jumlah'))
-                                                        ->where('user_id', $user_id)
-                                                        ->where('status_order_id', '!=', 5)
-                                                        ->where('status_order_id', '!=', 6)
-                                                        ->first();
+                                                    $total_order = \DB::table('order')->select(DB::raw('count(id) as jumlah'))->where('user_id', $user_id)->where('status_order_id', '!=', 5)->where('status_order_id', '!=', 6)->first();
                                                     ?>
                                                     <a href="{{ route('user.order') }}" class="site-cart">
-                                                        <span class="icon icon-shopping_cart text-white"></span>
+                                                        <span class="icon icon-shopping_cart text-black"></span>
                                                         <span class="count">{{ $total_order->jumlah }}</span>
                                                     </a>
                                                 </li>
@@ -184,7 +180,7 @@
                                         @endif
                                         <li class="d-inline-block d-md-none ml-md-0"><a
                                                 href="#"class="site-menu-toggle js-menu-toggle"><span
-                                                    class="icon-menu text-white"></span></a></li>
+                                                    class="icon-menu text-black"></span></a></li>
                                 </div>
                                 </ul>
                             </div>
@@ -194,11 +190,11 @@
                 <nav class="site-navigation text-right text-md-center" role="navigation">
                     <div class="container">
                         <ul class="site-menu js-clone-nav d-none d-md-block">
-                            <li class="{{ Request::path() === '/' ? '' : '' }}"><a
-                                    href="{{ route('home') }}">Beranda</a>
+                            <li class="{{ Request::path() === '/' ? '' : '' }}"><a href="{{ route('home') }}"><span
+                                        class="text-white">Beranda</span></a>
                             </li>
                             <li class="{{ Request::path() === 'produk' ? '' : '' }}"><a
-                                    href="{{ route('user.produk') }}">Produk</a></li>
+                                    href="{{ route('user.produk') }}"><span class="text-white">Produk</span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -207,13 +203,13 @@
         @yield('content')
 
         <footer class="site-footer border-top">
-            <div class="container bg-success p-5 rounded">
+            <div class="container bg-white p-5 rounded">
                 <div class="row">
                     <div class="col-md mb-5 mb-lg-0">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3 class="footer-heading mb-4 text-white font-weight-bold">Tentang Toko</h3>
-                                <ul class="list-unstyled text-white">
+                                <h3 class="footer-heading mb-4 text-black font-weight-bold">Tentang Toko</h3>
+                                <ul class="list-unstyled text-black">
                                     <p>{{ $toko->description }}</p>
                                 </ul>
                             </div>
@@ -224,14 +220,14 @@
                     @endphp
                     <div class="col-md col-lg-4">
                         <div class="block-5 mb-5">
-                            <h3 class="footer-heading mb-4 text-white font-weight-bold">Contact Info</h3>
+                            <h3 class="footer-heading mb-4 text-black font-weight-bold">Contact Info</h3>
                             <ul class="list-unstyled">
-                                <li class="address text-white">
+                                <li class="address text-black">
                                     {{ $city->title }}, {{ $toko->detail }}
                                 </li>
                                 <li class="phone"><a
                                         href="https://api.whatsapp.com/send/?phone={{ $toko->telp }}&text&type=phone_number&app_absent=0"
-                                        class="text-white">{{ $toko->telp }}</a>
+                                        class="text-black">{{ $toko->telp }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -250,27 +246,50 @@
     <script src="{{ asset('shopper') }}/js/jquery.magnific-popup.min.js"></script>
     <script src="{{ asset('shopper') }}/js/aos.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
-    <script src="{{ asset('shopper') }}/js/main.js"></script>
-    @yield('js')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var minusBtn = document.querySelector('.js-btn-minus');
-            var plusBtn = document.querySelector('.js-btn-plus');
-            var qtyInput = document.querySelector('input[name="qty"]');
-    
-            minusBtn.addEventListener('click', function () {
-                if (parseInt(qtyInput.value) > 1) {
-                    qtyInput.value = parseInt(qtyInput.value) - 1;
+        $(document).ready(function(){
+            $('.nonloop-block-3').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive:{
+                    0:{
+                        items: 1
+                    },
+                    600:{
+                        items: 2
+                    },
+                    1000:{
+                        items: 3
+                    }
                 }
-            });
-    
-            plusBtn.addEventListener('click', function () {
-                qtyInput.value = parseInt(qtyInput.value) + 1;
             });
         });
     </script>
     
+
+    <script src="{{ asset('shopper') }}/js/main.js"></script>
+    @yield('js')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var minusBtn = document.querySelector('.js-btn-minus');
+            var plusBtn = document.querySelector('.js-btn-plus');
+            var qtyInput = document.querySelector('input[name="qty"]');
+
+            minusBtn.addEventListener('click', function() {
+                if (parseInt(qtyInput.value) > 1) {
+                    qtyInput.value = parseInt(qtyInput.value) - 1;
+                }
+            });
+
+            plusBtn.addEventListener('click', function() {
+                qtyInput.value = parseInt(qtyInput.value) + 1;
+            });
+        });
+    </script>
+
 </body>
 
 </html>

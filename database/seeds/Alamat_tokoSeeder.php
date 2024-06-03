@@ -13,9 +13,9 @@ class Alamat_tokoSeeder extends Seeder
     public function run()
     {
         $data = [
-            'name_store' => 'CV Amar Abadi',
-            'description' => 'Toko ATK CV Amar Abdi adalah destinasi utama untuk kebutuhan alat tulis kantor (ATK) berkualitas dan beragam. Dengan komitmen kepada layanan pelanggan yang unggul dan produk-produk berkualitas, kami menjadi pilihan utama bagi pelanggan yang menginginkan pengalaman belanja yang memuaskan.',
-            'telp' => '+6285265659186',
+            'name_store' => 'Maahir Store Jambi',
+            'description' => 'Selamat datang di Maahir Store Jambi, destinasi terbaik Anda untuk mendapatkan handphone second berkualitas dengan harga yang terjangkau. Kami memahami bahwa memiliki handphone canggih tidak harus selalu mahal. Oleh karena itu, kami hadir untuk menyediakan berbagai pilihan handphone second yang masih dalam kondisi prima dan siap digunakan.',
+            'telp' => '+6281297925686',
             'city_id' => 156,
             'detail' => 'Jambi, Indonesia'
         ];

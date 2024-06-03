@@ -15,34 +15,49 @@ class CategorySeeder extends Seeder
         // factory(App\Categories::class, 10)->create();
         $categories = [
             [
-                'name' => 'Pensil dan Pulpen',
+                'name' => 'Apple',
             ],
             [
-                'name' => 'Kertas',
+                'name' => 'Samsung',
             ],
             [
-                'name' => 'Peralatan Tulis',
+                'name' => 'Xiaomi',
             ],
             [
-                'name' => 'Perlengkapan Meja'
+                'name' => 'Oppo',
             ],
             [
-                'name' => 'Klip dan Penjepit'
+                'name' => 'Vivo',
             ],
             [
-                'name' => 'Tinta dan Kerektor'
+                'name' => 'Realme',
             ],
             [
-                'name' => 'Peralatan Kreatif'
+                'name' => 'Huawei',
             ],
             [
-                'name' => 'Perlengkapan Kantor'
+                'name' => 'OnePlus',
             ],
             [
-                'name' => 'Aksesoris'
+                'name' => 'Sony',
             ],
             [
-                'name' => 'Perlengkapan Teknologi'
+                'name' => 'LG',
+            ],
+            [
+                'name' => 'Nokia',
+            ],
+            [
+                'name' => 'Google Pixel',
+            ],
+            [
+                'name' => 'Asus',
+            ],
+            [
+                'name' => 'Motorola',
+            ],
+            [
+                'name' => 'Lenovo',
             ],
             // Tambahkan kategori lainnya
         ];

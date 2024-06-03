@@ -1,10 +1,10 @@
 @extends('user.app')
 @section('content')
-    <div class="bg-light py-3">
+    <div class="py-3" style="background-color: rgb(117, 117, 117) ">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span> <strong
-                        class="text-black">Address</strong></div>
+                        class="text-white">Address</strong></div>
             </div>
         </div>
     </div>
@@ -18,9 +18,9 @@
                     $city = App\City::where('city_id', $address->cities_id)->first();
                 }
             @endphp
-            <h4 class="font-weight-bold mb-3 text-primary">Alamat Sekarang</h3>
-                <h5 class="mb-4 font-weight-bold">Kota : {{ $city->title ?? 'Belum di atur' }}</h5>
-                <h5 class="mb-5 font-weight-bold">Detail : {{ $address->detail ?? 'Belum di atur' }}</h5>
+            <h4 class="font-weight-bold mb-3 text-white">Alamat Sekarang</h3>
+                <h5 class="mb-4 font-weight-bold text-white">Kota : {{ $city->title ?? 'Belum di atur' }}</h5>
+                <h5 class="mb-5 font-weight-bold text-white">Detail : {{ $address->detail ?? 'Belum di atur' }}</h5>
 
                 @if ($address == true)
                     <a href="{{ route('user.alamat.ubah', ['id' => $alamat[0]->id]) }}" class="btn btn-dark">Ubah

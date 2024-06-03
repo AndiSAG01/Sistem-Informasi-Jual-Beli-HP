@@ -1,11 +1,11 @@
 @extends('user.app')
 @section('content')
-    <div class="bg-light py-3">
+    <div class="py-3" style="background-color: rgb(117, 117, 117) ">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span><a
-                        href="#">Product</a> <span class="mx-2 mb-0">/</span> <strong
-                        class="text-black">{{ $category->name }}</strong></div>
+                <div class="col-md-12 mb-0"><a href="#" class="text-black">Home</a> <span class="mx-2 mb-0">/</span><a
+                        href="#" class="text-black">Product</a> <span class="mx-2 mb-0">/</span> <strong
+                        class="text-white">{{ $category->name }}</strong></div>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
     <div class="site-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-center text-primary mb-4">
+                <div class="col-md-12 text-center text-white mb-4">
                     <h3 class="display-5 font-weight-bold" style="text-transform:uppercase">Detail Produk</h3>
                     <hr>
                 </div>
@@ -32,12 +32,12 @@
                     <img src="{{ Storage::url($produk->image) }}" alt="Image" width="100%" class="img-fluid">
                 </div>
                 <div class="col-md-6">
-                    <h2 class="font-weight-bold text-primary">{{ $produk->name }}</h2>
-                    <p class="text-dark">
+                    <h2 class="font-weight-bold text-white">{{ $produk->name }}</h2>
+                    <p class="text-white">
                         {{ $produk->description }}
                     </p>
                     <p>
-                        <strong class="text-primary h4">Rp {{ number_format($produk->price, 2, ',', '.') }} </strong>
+                        <strong class="text-white h4">Rp {{ number_format($produk->price, 2, ',', '.') }} </strong>
                     </p>
                     <div class="mb-5">
                         <form action="{{ route('user.keranjang.simpan') }}" method="post">
@@ -49,7 +49,7 @@
                             @endif
                             <input type="hidden" name="products_id" value="{{ $produk->id }}">
                             
-                            <small class="mb-4">Sisa Stok 
+                            <small class="mb-4 text-white">Sisa Stok 
                                 @if ($produk->stok <= 0)
                                     <button class="btn btn-danger">Stok Telah Habis</button>
                                 @elseif ($produk->stok >= 0)
@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                     
-                            <p><button type="submit" class="buy-now btn btn-sm btn-dark">Masukkan ke keranjang</button></p>
+                            <p><button type="submit" class="buy-now btn btn-sm btn-white">Masukkan ke keranjang</button></p>
                         </form>
                     </div>
                 </div>

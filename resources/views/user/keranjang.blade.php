@@ -1,10 +1,10 @@
 @extends('user.app')
 @section('content')
-    <div class="bg-light">
+    <div class="" style="background-color: rgb(117, 117, 117) ">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span> <strong
-                        class="text-black">Cart</strong></div>
+                <div class="col-md-12 mb-0"><a href="#" class="text-black">Home</a> <span class="mx-2 mb-0">/</span> <strong
+                        class="text-white">Cart</strong></div>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
                     @csrf
                     <table class="table table-bordered">
                         <thead class="text-center">
-                            <tr>
+                            <tr class="text-white">
                                 <th class="product-thumbnail">Gambar</th>
                                 <th class="product-name">Produk</th>
                                 <th class="product-price">Harga</th>
@@ -32,7 +32,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr class="text-white">
 
                                 <?php $subtotal=0; foreach($keranjangs as $keranjang): ?>
                                 <td class="product-thumbnail">
@@ -40,7 +40,7 @@
                                         width="150">
                                 </td>
                                 <td class="product-name">
-                                    <h2 class="h5 text-black">{{ $keranjang->nama_produk }}</h2>
+                                    <h2 class="h5 text-white">{{ $keranjang->nama_produk }}</h2>
                                 </td>
                                 <td>Rp. {{ number_format($keranjang->price, 2, ',', '.') }} </td>
                                 <td>
@@ -89,11 +89,11 @@
                             <div class="col-md-7">
                                 <div class="row">
                                     <div class="col-md-12 text-right border-bottom mb-3">
-                                        <h3 class="text-black h4 text-uppercase text-center">Total Belanja</h3>
+                                        <h3 class="text-white h4 text-uppercase text-center">Total Belanja</h3>
                                     </div>
                                 </div>
                                 <div class="row mb-3 justify-content-center">
-                                    <h5 class="text-black text-center text-primary">Rp. {{ number_format($subtotal, 2, ',', '.') }}</h5>
+                                    <h5 class="text-white text-center text-primary">Rp. {{ number_format($subtotal, 2, ',', '.') }}</h5>
                                 </div>
 
                                 <div class="row">
