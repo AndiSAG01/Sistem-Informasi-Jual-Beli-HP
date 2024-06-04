@@ -1,10 +1,9 @@
 @extends('user.app')
 @section('content')
-    <div class="container my-5 text-center text-white">
-        <h1 class="font-weight-bold text-white">MAAHIR STORE JAMBI
-        <h3 class="font-weight-bold text-white">TOKO JUAL BELI HANDPHONE SECOND</h3>
-        </h1>
-    </div>
+    <text class="text-center">
+        <span class="word">Maahir<span class="superscript"> S</span>tore</span>
+        <span class="word">Jambi</span>
+    </text>
 
     <div class="container">
         <div class="site-blocks-cover rounded"
@@ -26,37 +25,37 @@
             </div>
             @php
                 $random1 = App\Product::oldest()->first();
-                $random2 = App\Product::inRandomOrder()
-                    ->limit(2)
-                    ->get();
-                $random3 = App\Product::latest()
-                    ->limit(2)
-                    ->get();
+                $random2 = App\Product::inRandomOrder()->limit(2)->get();
+                $random3 = App\Product::latest()->limit(2)->get();
             @endphp
-           <div class="row">
-            <div class="col-md-12">
-                <div class="nonloop-block-3 owl-carousel">
-                    @foreach ($produks as $produk)
-                        <div class="item">
-                            <div class="block-4 text-center border bg-secondary">
-                                <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder" class="img-fluid" width="100%" style="height:200px">
-                                <div class="block-4-text p-4" style="height: 200px;">
-                                    <h3 class="text-white">{{ Str::limit($produk->name, 20, '...') }}</h3>
-                                    <p class="mb-0 text-white">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
-                                    @if ($produk->stok == 0)
-                                        <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}" class="btn btn-primary mt-2 disabled" tabindex="-1" role="button" aria-disabled="true">Habis</a>
-                                    @else
-                                        <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}" class="btn btn-dark mt-2">Detail</a>
-                                    @endif
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="nonloop-block-3 owl-carousel">
+                        @foreach ($produks as $produk)
+                            <div class="item">
+                                <div class="block-4 text-center border bg-secondary">
+                                    <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder" class="img-fluid"
+                                        width="100%" style="height:200px">
+                                    <div class="block-4-text p-4" style="height: 200px;">
+                                        <h3 class="text-white">{{ Str::limit($produk->name, 20, '...') }}</h3>
+                                        <p class="mb-0 text-white">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
+                                        @if ($produk->stok == 0)
+                                            <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
+                                                class="btn btn-primary mt-2 disabled" tabindex="-1" role="button"
+                                                aria-disabled="true">Habis</a>
+                                        @else
+                                            <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
+                                                class="btn btn-dark mt-2">Detail</a>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
             </div>
-        </div>
-        
-            
+
+
         </div>
     </div>
     <div class="site-section">
@@ -65,7 +64,7 @@
                 <div class="col-lg-6 feature-text wow fadeInUp" data-wow-delay="0.1s"
                     style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                     <h6 class="text-white font-weight-bold text-uppercase mb-3">FITUR KAMI</h6>
-                    <h1 class="font-weight-bold text-white mb-5">KAMI STORE TERPECAYA</h1>
+                    <h2 class="font-weight-bold text-white mb-5">KAMI STORE TERPECAYA</h2>
                     <div class="d-flex mb-5 wow fadeInUp" data-wow-delay="0.3s"
                         style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                         <i class="fa fa-globe text-white fa-3x flex-shrink-0"></i>

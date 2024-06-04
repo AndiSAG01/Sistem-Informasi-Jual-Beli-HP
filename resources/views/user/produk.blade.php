@@ -21,7 +21,7 @@
             <div class="row mb-5">
                 <div class="col-md order-2  mb-5 mb-md-0">
                     <div class="border p-1 rounded mb-4">
-                        <h2 class="mb-3 h6 text-uppercase  text-white d-block font-weight-bold">Kategori Produk</h3>
+                        <h2 class="mb-3 h6 text-uppercase  text-white d-block font-weight-bold">Kategori</h2>
                             <ul class="list-unstyled mb-0">
                                 @foreach ($categories as $categori)
                                     <li class="mb-1"><a href="{{ route('user.kategori', ['id' => $categori->id]) }}"

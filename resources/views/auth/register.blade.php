@@ -22,32 +22,27 @@
 
 </head>
 
-<body class="bg-gradient-success">
+<style>
+    .full-image {
+    background-image: url('{{ asset('/adminassets/assets/images/maahir.jpg') }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+</style>
+
+<body class="bg-white">
 
     <div class="container">
-        <div class="alert alert-primary alert-dismissible fade show" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            <strong>Alert Heading</strong>
-            @foreach ($errors->all() as $error)
-                <p>{{ $error }}</p>
-            @endforeach
-        </div>
-
-        <script>
-            var alertList = document.querySelectorAll(".alert");
-            alertList.forEach(function(alert) {
-                new bootstrap.Alert(alert);
-            });
-        </script>
-        <div class="card o-hidden border-0 shadow-lg my-5" style="background: rgb(180, 255, 127)">
+        <div class="card o-hidden border-0 shadow-lg my-5" style="background: rgb(0, 0, 0)">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image" style=" background-image: url('{{ asset('/adminassets/assets/images/atk.jpeg') }}');"></div>
+                    <div class="col-lg-5 d-none d-lg-block full-image"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4 font-weight-bold">Buat akun!</h1>
+                                <h1 class="h4 text-white mb-4 font-weight-bold">Buat akun!</h1>
                             </div>
                             <form class="pt-3" method="POST" action="{{ route('register') }}">
                                 @csrf

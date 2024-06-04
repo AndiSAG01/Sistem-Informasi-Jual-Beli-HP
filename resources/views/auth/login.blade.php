@@ -21,8 +21,16 @@
     <link href="/layouts/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
+<style>
+    .full-image {
+    background-image: url('{{ asset('/adminassets/assets/images/maahir.jpg') }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+</style>
 
-<body class="bg-gradient-success">
+<body class="bg-white">
 
     <div class="container">
 
@@ -31,15 +39,15 @@
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5" style="background: rgb(133, 255, 127)">
+                <div class="card o-hidden border-0 shadow-lg my-5" style="background: rgb(0, 0, 0)">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block" style=" background-image: url('{{ asset('/adminassets/assets/images/atk.jpeg') }}'); "></div>
+                            <div class="col-lg-6 d-none d-lg-block full-image" ></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4 font-weight-bold">Selamat datang kembali!</h1>
+                                        <h1 class="h4 text-white mb-4 font-weight-bold">Selamat datang kembali!</h1>
                                         <div class="alert bg-info  text-white alert-primary" role="alert">
                                             <small>Silakan masukkan email dan password Anda untuk login. Jika Anda belum
                                                 memiliki akun, silakan klik tombol daftar di bawah ini.
