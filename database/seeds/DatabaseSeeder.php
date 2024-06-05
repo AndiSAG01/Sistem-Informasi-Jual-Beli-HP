@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RekeningTableSeeder::class);
         $this->call(Alamat_tokoSeeder::class);
         $this->call(CategorySeeder::class);
-        // $this->call(ProductSeeder::class);
+        $this->call(ProductSeeder::class);
         // $this->call(OrderSeeder::class);
 
         // factory(App\Order::class, 10)->create();

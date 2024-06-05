@@ -12,7 +12,7 @@ class RekeningTableSeeder extends Seeder
     public function run()
     {
         $data = [
-            ['bank_name' => 'Sea Bank','atas_nama'=>'cv ammar abadi','no_rekening'=>'12310823']
+            ['bank_name' => 'Sea Bank','atas_nama'=>'maahir store jambi','no_rekening'=>'12310823']
         ];
         Rekening::insert($data);
     }

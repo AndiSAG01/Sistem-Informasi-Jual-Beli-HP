@@ -3,7 +3,7 @@
     <div class="py-3" style="background-color: rgb(117, 117, 117)">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 mb-0"><a href="#">Home</a> <span class="mx-2 mb-0">/</span> <strong
+                <div class="col-md-12 mb-0"><a href="#" class="text-black" >Home</a> <span class="mx-2 mb-0">/</span> <strong
                         class="text-white">Product</strong></div>
             </div>
         </div>
@@ -37,9 +37,11 @@
                     <div class="row mb-5 justify-content-center">
                         @foreach ($produks as $produk)
                             <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                                <div class="block-4 text-center border bg-white">
-                                    <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder" class="img-fluid"
-                                        width="100%" style="height:200px">
+                                <div class="block-4 bg-white text-center border bg-secondary d-flex flex-column align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center" style="height:300px">
+                                        <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder" class="img-fluid"
+                                        width="400%" style="max-height:100%; max-width:200%;">
+                                    </div>
                                     </a>
                                     <div class="block-4-text p-4" style="height: 200px;">
                                         <h3 class="text-black">{{ Str::limit($produk->name, 20, '...') }}</h3>

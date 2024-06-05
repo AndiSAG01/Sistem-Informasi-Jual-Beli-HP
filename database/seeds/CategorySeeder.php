@@ -15,7 +15,7 @@ class CategorySeeder extends Seeder
         // factory(App\Categories::class, 10)->create();
         $categories = [
             [
-                'name' => 'Apple',
+                'name' => 'Iphone',
             ],
             [
                 'name' => 'Samsung',
@@ -32,34 +32,6 @@ class CategorySeeder extends Seeder
             [
                 'name' => 'Realme',
             ],
-            [
-                'name' => 'Huawei',
-            ],
-            [
-                'name' => 'OnePlus',
-            ],
-            [
-                'name' => 'Sony',
-            ],
-            [
-                'name' => 'LG',
-            ],
-            [
-                'name' => 'Nokia',
-            ],
-            [
-                'name' => 'Google Pixel',
-            ],
-            [
-                'name' => 'Asus',
-            ],
-            [
-                'name' => 'Motorola',
-            ],
-            [
-                'name' => 'Lenovo',
-            ],
-            // Tambahkan kategori lainnya
         ];
 
         foreach ($categories as $category) {

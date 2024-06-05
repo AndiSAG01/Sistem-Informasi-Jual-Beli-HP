@@ -32,13 +32,15 @@
                 <div class="col-md-12">
                     <div class="nonloop-block-3 owl-carousel">
                         @foreach ($produks as $produk)
-                            <div class="item">
-                                <div class="block-4 text-center border bg-secondary">
-                                    <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder" class="img-fluid"
-                                        width="100%" style="height:200px">
+                            <div class="item card-body" data-aos="fade-up" >
+                                <div class="block-4 text-center border bg-white d-flex flex-column align-items-center">
+                                    <div class="d-flex justify-content-center align-items-center" style="height:400px">
+                                        <img src="{{ Storage::url($produk->image) }}" alt="Image placeholder" class="img-fluid"
+                                        width="400%" style="max-height:100%; max-width:200%;">
+                                    </div>
                                     <div class="block-4-text p-4" style="height: 200px;">
-                                        <h3 class="text-white">{{ Str::limit($produk->name, 20, '...') }}</h3>
-                                        <p class="mb-0 text-white">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
+                                        <h3 class="text-black">{{ Str::limit($produk->name, 20, '...') }}</h3>
+                                        <p class="mb-0 text-black">Rp. {{ number_format($produk->price, 2, ',', '.') }}</p>
                                         @if ($produk->stok == 0)
                                             <a href="{{ route('user.produk.detail', ['id' => $produk->id]) }}"
                                                 class="btn btn-primary mt-2 disabled" tabindex="-1" role="button"

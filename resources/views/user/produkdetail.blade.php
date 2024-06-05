@@ -22,7 +22,7 @@
     <div class="site-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-center text-white mb-4">
+                <div class="col-md-12 text-center text-black mb-4">
                     <h3 class="display-5 font-weight-bold" style="text-transform:uppercase">Detail Produk</h3>
                     <hr>
                 </div>
