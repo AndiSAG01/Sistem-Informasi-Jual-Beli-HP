@@ -260,6 +260,7 @@
 
         }
     </style>
+    @yield('css')
 </head>
 
 <body style="background-color:rgb(117, 117, 117)">

@@ -1,20 +1,98 @@
 @extends('user.app')
+
+@section('css')
+<style>
+    .mySlides {display: none;}
+    img {vertical-align: middle;}
+    
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+    
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+    
+    /* The dots/bullets/indicators */
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    .active {
+      background-color: #717171;
+    }
+    
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 3s;
+    }
+    
+    @keyframes fade {
+      from {opacity: .5} 
+      to {opacity: 2}
+    }
+    
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .text {font-size: 11px}
+    }
+    </style>
+@endsection
 @section('content')
     <text class="text-center">
         <span class="word">Maahir<span class="superscript"> S</span>tore</span>
         <span class="word">Jambi</span>
     </text>
 
-    <div class="container">
-        <div class="site-blocks-cover rounded"
-            style="background-image: url('https://images.unsplash.com/photo-1573148164257-8a2b173be464?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBldCUyMGNhdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=700&q=60'); max-height:200px;"
-            data-aos="fade">
-            <div class="container">
-                <div class="row align-items-start align-items-md-center justify-content-end">
-                </div>
-            </div>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade text-center">
+          <img src="{{ asset('adminassets') }}/assets/images/bg-1.jpeg" style="height: 600px; width:700px">
         </div>
-    </div>
+        
+        <div class="mySlides fade text-center">
+          <img src="{{ asset('adminassets') }}/assets/images/bg2.jpeg" style="height: 600px; width:700px">
+        </div>
+
+        <div class="mySlides fade text-center">
+          <img src="{{ asset('adminassets') }}/assets/images/bg3.jpeg" style="height: 600px; width:700px">
+        </div>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+        
     <div class="site-section block-3 site-blocks-2" data-aos="fade-up">
         <div class="container">
             <div class="row justify-content-center">
@@ -108,4 +186,28 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+<script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script>
 @endsection
