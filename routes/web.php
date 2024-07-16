@@ -20,6 +20,7 @@ use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\RekeningController;
 use App\Http\Controllers\admin\RoomadmController;
 use App\Http\Controllers\admin\TransaksiController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\user\AlamatController;
 use App\Http\Controllers\user\CheckoutController;
 use App\Http\Controllers\user\KeranjangController;
@@ -41,6 +42,7 @@ Route::get('/produk',[ProdukController::class, 'index'])->name('user.produk');
 Route::get('/produk/cari',[ProdukController::class, 'cari'])->name('user.produk.cari');
 Route::get('/kategori/{id}',[KategoriController::class, 'produkByKategori'])->name('user.kategori');
 Route::get('/produk/{id}',[ProdukController::class, 'detail'])->name('user.produk.detail');
+Route::get('refresh-captcha',[LoginController::class,'refreshCaptcha']);
 
 Route::group(['middleware' => ['auth','checkRole:admin,pemilik']],function(){
     Route::get('/admin','DashboardController@index')->name('admin.dashboard');
