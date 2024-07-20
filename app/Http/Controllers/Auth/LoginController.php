@@ -83,7 +83,7 @@ class LoginController extends Controller
         }
 
         $this->incrementLoginAttempts($request);
-        return $this->sendFailedLoginResponse($request);
+        return redirect()->back()->with('error','Email  dan Password Anda Salah');
     }
 
     /**
@@ -95,7 +95,7 @@ class LoginController extends Controller
     protected function validateLogin(Request $request)
     {
         $request->validate([
-            $this->username() => 'required|string',
+            'email' => 'required|string',
             'password' => 'required|string',
             'captcha' => 'required|captcha',
         ], [
@@ -103,16 +103,7 @@ class LoginController extends Controller
             'captcha.captcha' => 'Invalid captcha code. Please try again.',
         ]);
     }
-
-    /**
-     * Get the login username to be used by the controller.
-     *
-     * @return string
-     */
-    public function username()
-    {
-        return 'email';
-    }
+ 
 
     /**
      * Refresh the CAPTCHA image.
