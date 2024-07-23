@@ -17,6 +17,11 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
+    'throttle' => [
+    'enabled' => true,
+    'max_attempts' => 1,
+    'decay_minutes' => 1,
+],
 
     /*
     |--------------------------------------------------------------------------

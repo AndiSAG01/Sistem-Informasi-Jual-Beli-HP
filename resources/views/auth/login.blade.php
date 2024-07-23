@@ -37,15 +37,19 @@
         <!-- Outer Row -->
         <div class="row justify-content-center">
             @if ($errors->any())
-            <div class="alert alert-danger mt-4">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+                <div class="alert alert-danger mt-4">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            @if ($errors->has('login'))
+            <div class="alert alert-danger">
+                {{ $errors->first('login') }}
             </div>
         @endif
-
             <div class="col-xl-10 col-lg-12 col-md-9">
 
                 <div class="card o-hidden border-0 shadow-lg my-5" style="background: rgb(0, 0, 0)">
@@ -71,9 +75,9 @@
                                             <label for="email">Email</label>
                                             <input id="email" type="email"
                                                 class="form-control @error('email') is-invalid @enderror" name="email"
-                                                 required autocomplete="email" autofocus>
+                                                required autocomplete="email" autofocus>
                                         </div>
-                            
+
                                         <div class="form-group mb-3">
                                             <label for="password">Password</label>
                                             <input id="password" type="password"
@@ -121,7 +125,6 @@
         </div>
 
     </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="/layouts/vendor/jquery/jquery.min.js"></script>
     <script src="/layouts/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

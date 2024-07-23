@@ -73,9 +73,8 @@ class LoginController extends Controller
     {
         $this->validateLogin($request);
 
-        if ($this->hasTooManyLoginAttempts($request)) {
-            $this->fireLockoutEvent($request);
-            return $this->sendLockoutResponse($request);
+        if($this->hasTooManyLoginAttempts($request)){
+            return redirect()->back()->with('error', 'anda sudah melewati batas login');
         }
 
         if ($this->attemptLogin($request)) {

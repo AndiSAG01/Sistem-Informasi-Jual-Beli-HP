@@ -36,7 +36,7 @@
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>Nama Pelanggan</th>
+                        <th>Nama Pengguna</th>
                         <th>Email</th>
                         <th>Aksi</th>
                     </tr>

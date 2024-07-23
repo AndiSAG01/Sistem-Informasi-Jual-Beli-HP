@@ -35,7 +35,6 @@ use App\Http\Controllers\SewaController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Auth::routes();
 Route::get('/',[WelcomeController::class, 'index'])->name('home');
 Route::get('/home',[WelcomeController::class, 'index'])->name('home2');
 Route::get('/produk',[ProdukController::class, 'index'])->name('user.produk');
@@ -43,6 +42,10 @@ Route::get('/produk/cari',[ProdukController::class, 'cari'])->name('user.produk.
 Route::get('/kategori/{id}',[KategoriController::class, 'produkByKategori'])->name('user.kategori');
 Route::get('/produk/{id}',[ProdukController::class, 'detail'])->name('user.produk.detail');
 Route::get('refresh-captcha',[LoginController::class,'refreshCaptcha']);
+
+Route::middleware('throttle:3|30,1')->group(function () {
+    Auth::routes();  
+});
 
 Route::group(['middleware' => ['auth','checkRole:admin,pemilik']],function(){
     Route::get('/admin','DashboardController@index')->name('admin.dashboard');
@@ -62,13 +65,6 @@ Route::group(['middleware' => ['auth','checkRole:admin,pemilik']],function(){
     Route::post('/admin/room/update/{id}',[RoomadmController::class, 'update'])->name('admin.room.update');
     Route::get('/admin/room/edit/{id}',[RoomadmController::class,'edit'])->name('admin.room.edit');
     Route::get('/admin/room/delete/{id}',[RoomadmController::class,'delete'])->name('admin.room.delete');
-
-    #keloladatapenginapanadm
-    // Route::get('/admin/penginapan',[PenginapanadmController::class,'index'])->name('admin.penginapan');
-    // Route::get('/admin/transaksi/{id}', [PenginapanadmController::class, 'end'])->name('admin.transaksi.selesai');
-    // Route::put('/admin/transaksi/{id}/reject', [PenginapanadmController::class, 'reject'])->name('admin.transaksi.reject');
-    // Route::put('/admin/{id}/destroy',[PenginapanadmController::class, 'delete'])->name('admin.penginapan.delete');
-    // Route::put('/admin/{id}/confirmation',[PenginapanadmController::class, 'confirmation'])->name('transaksi.confirmation');
 
 
     #kategoriadm
