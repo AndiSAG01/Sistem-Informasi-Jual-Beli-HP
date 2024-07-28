@@ -29,6 +29,13 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label>Kode Admin</label>
+                        <input type="number" class="form-control invalid" name="code" value="{{ old('code') }}">
+                        @error('code')
+                            <small class="text-danger form-text">{{ $message }}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label>Email</label>
                         <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                         @error('email')

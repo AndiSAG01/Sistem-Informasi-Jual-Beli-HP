@@ -38,6 +38,7 @@
                         <th>No.</th>
                         <th>Nama Pengguna</th>
                         <th>Email</th>
+                        <th>Kode</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -47,6 +48,7 @@
                             <td class="text-center">{{ ++$no }} </td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
+                            <td>ADM.{{ $item->code }}</td>
                             <td class="text-center">
                                 <div class="d-flex" style="gap: 5px">
                                     <a href="/administrator/{{ $item->id }}/edit" class="btn btn-warning"><i

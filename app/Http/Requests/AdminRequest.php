@@ -25,7 +25,7 @@ class AdminRequest extends FormRequest
     {
         return [
             'name' => 'required|min:5',
-            'code' => 'string|max:7',
+            'code' => 'string|min:3',
             'email' => 'required|email|unique:users,email,'.$this->id,
             'password' => 'required',
         ];
